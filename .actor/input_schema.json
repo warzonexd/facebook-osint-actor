@@ -1,0 +1,47 @@
+{
+    "title": "Facebook OSINT",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "action": {
+            "title": "Action",
+            "type": "string",
+            "description": "Operation to perform",
+            "editor": "select",
+            "default": "search",
+            "enum": [
+                "search",
+                "posts",
+                "pages",
+                "profiles",
+                "groups",
+                "comments",
+                "photos",
+                "videos",
+                "reels",
+                "events"
+            ]
+        },
+        "query": {
+            "title": "Search Query",
+            "type": "string"
+        },
+        "url": {
+            "title": "Facebook URL",
+            "type": "string"
+        },
+        "limit": {
+            "title": "Limit",
+            "type": "integer",
+            "default": 20
+        },
+        "headless": {
+            "title": "Headless Browser",
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "required": [
+        "action"
+    ]
+}
