@@ -1,0 +1,9 @@
+{
+  "actorSpecification": 1,
+  "name": "facebook-osint-actor",
+  "title": "Facebook OSINT Actor",
+  "description": "Facebook OSINT Actor",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile"
+}
