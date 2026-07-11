@@ -21,6 +21,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Debug
+debug/
+
 # Apify storage
 storage/
 

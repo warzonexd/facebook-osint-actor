@@ -1,47 +1,78 @@
 {
-    "title": "Facebook OSINT",
-    "type": "object",
-    "schemaVersion": 1,
-    "properties": {
-        "action": {
-            "title": "Action",
-            "type": "string",
-            "description": "Operation to perform",
-            "editor": "select",
-            "default": "search",
-            "enum": [
-                "search",
-                "posts",
-                "pages",
-                "profiles",
-                "groups",
-                "comments",
-                "photos",
-                "videos",
-                "reels",
-                "events"
-            ]
-        },
-        "query": {
-            "title": "Search Query",
-            "type": "string"
-        },
-        "url": {
-            "title": "Facebook URL",
-            "type": "string"
-        },
-        "limit": {
-            "title": "Limit",
-            "type": "integer",
-            "default": 20
-        },
-        "headless": {
-            "title": "Headless Browser",
-            "type": "boolean",
-            "default": true
-        }
+  "title": "Facebook OSINT Actor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "action": {
+      "title": "Action",
+      "type": "string",
+      "description": "Select the Facebook operation to perform.",
+      "editor": "select",
+      "default": "search",
+      "enum": [
+        "search",
+        "posts",
+        "pages",
+        "profiles",
+        "groups",
+        "comments",
+        "photos",
+        "videos",
+        "reels",
+        "events"
+      ],
+      "enumTitles": [
+        "Search",
+        "Posts",
+        "Pages",
+        "Profiles",
+        "Groups",
+        "Comments",
+        "Photos",
+        "Videos",
+        "Reels",
+        "Events"
+      ]
     },
-    "required": [
-        "action"
-    ]
+    "query": {
+      "title": "Search Query",
+      "type": "string",
+      "description": "Search keyword or phrase."
+    },
+    "url": {
+      "title": "Facebook URL",
+      "type": "string",
+      "description": "Facebook URL to scrape."
+    },
+    "limit": {
+      "title": "Maximum Results",
+      "type": "integer",
+      "description": "Maximum number of items to collect.",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "headless": {
+      "title": "Headless Browser",
+      "type": "boolean",
+      "description": "Run Playwright in headless mode.",
+      "default": true
+    },
+    "cookies": {
+      "title": "Cookies",
+      "type": "array",
+      "description": "Optional Playwright/Facebook cookies.",
+      "editor": "json"
+    },
+    "max_age_days": {
+      "title": "Maximum Age (Days)",
+      "type": "integer",
+      "description": "Only return results newer than this number of days.",
+      "default": 30,
+      "minimum": 1
+    }
+  },
+  "required": [
+    "action"
+  ]
 }

@@ -6,7 +6,8 @@ RUN echo "Python version:" \
  && python --version \
  && echo "Pip version:" \
  && pip --version \
- && pip install --no-cache-dir -r requirements.txt
+ && pip install --no-cache-dir -r requirements.txt \
+ && playwright install chromium
 
 COPY . ./
 
