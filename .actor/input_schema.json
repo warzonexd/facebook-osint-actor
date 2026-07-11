@@ -6,7 +6,7 @@
     "action": {
       "title": "Action",
       "type": "string",
-      "description": "Select the Facebook operation to perform.",
+      "description": "Select the Facebook operation.",
       "editor": "select",
       "default": "search",
       "enum": [
@@ -20,34 +20,25 @@
         "videos",
         "reels",
         "events"
-      ],
-      "enumTitles": [
-        "Search",
-        "Posts",
-        "Pages",
-        "Profiles",
-        "Groups",
-        "Comments",
-        "Photos",
-        "Videos",
-        "Reels",
-        "Events"
       ]
     },
     "query": {
       "title": "Search Query",
       "type": "string",
-      "description": "Search keyword or phrase."
+      "description": "Keyword or phrase.",
+      "editor": "textfield"
     },
     "url": {
       "title": "Facebook URL",
       "type": "string",
-      "description": "Facebook URL to scrape."
+      "description": "Facebook URL.",
+      "editor": "textfield"
     },
     "limit": {
       "title": "Maximum Results",
       "type": "integer",
-      "description": "Maximum number of items to collect.",
+      "description": "Maximum number of results.",
+      "editor": "number",
       "default": 20,
       "minimum": 1,
       "maximum": 1000
@@ -55,21 +46,22 @@
     "headless": {
       "title": "Headless Browser",
       "type": "boolean",
-      "description": "Run Playwright in headless mode.",
+      "description": "Run browser headless.",
+      "editor": "checkbox",
       "default": true
     },
     "cookies": {
       "title": "Cookies",
       "type": "array",
-      "description": "Optional Playwright/Facebook cookies.",
+      "description": "Facebook cookies.",
       "editor": "json"
     },
     "max_age_days": {
       "title": "Maximum Age (Days)",
       "type": "integer",
-      "description": "Only return results newer than this number of days.",
-      "default": 30,
-      "minimum": 1
+      "description": "Ignore older results.",
+      "editor": "number",
+      "default": 30
     }
   },
   "required": [
